@@ -39,7 +39,7 @@
                             onOff: false,
                         });
                     } else {
-                        clearInterval(this.timerID);
+                        clearInterval(this.intervalId);
                         this.setState({
                             onOff: true,
                         });
@@ -57,8 +57,8 @@
             render() {
                 return (
                     <div>
-                        <p onClick={this.onOffCount}> Start + {this.props.inc} </p>
-                        <p onClick={this.resetCount}> Reset </p>
+                        <button onClick={this.onOffCount}> Start + {this.props.inc} </button>
+                        <button onClick={this.resetCount}> Reset </button>
                         <p>Time: {this.state.count}</p>
                     </div>
                 )
