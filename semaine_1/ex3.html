@@ -29,10 +29,8 @@
                 this.onOffCount = () => {
                     if (this.state.onOff) {
                         this.intervalId = setInterval(() => {
-                            const parseInc = parseInt(this.props.inc);
-                            const inc = isNaN(parseInc) ? 1 : parseInc;
                             this.setState({
-                                count: this.state.count + inc,
+                                count: this.state.count + this.props.inc,
                             });
                         }, 1000);
                         this.setState({
@@ -68,8 +66,8 @@
         const App = () => {
             return (
                 <div>
-                    <Timer inc="1"/>
-                    <Timer inc="5"/>
+                    <Timer inc={1}/>
+                    <Timer inc={5}/>
                 </div>
             )
         }
