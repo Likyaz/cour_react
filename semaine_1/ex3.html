@@ -23,7 +23,7 @@
                 super(props);
                 this.state = {
                     count: 0,
-                    onOff: false,
+                    onOff: true,
                 };
 
                 this.onOffCount = () => {
@@ -65,8 +65,17 @@
             }
         }
 
+        const App = () => {
+            return (
+                <div>
+                    <Timer inc="1"/>
+                    <Timer inc="5"/>
+                </div>
+            )
+        }
+
         ReactDOM.render(
-            <Timer inc='5'/>,
+            <App />,
             document.getElementById('root')
         );
     </script>
