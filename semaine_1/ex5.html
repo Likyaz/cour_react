@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello React</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+    <style>
+        .heading{
+            color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const Square = (props) => {
+            const myStyle = {
+                backgroundColor: props.color,
+                height: '30px',
+                width: '30px',
+                display: 'inline-block',
+                margin: '0',
+                margin: '0'
+            }
+            return (
+                <div style={myStyle}></div>
+            )
+        }
+
+        const App = (props) => {
+            const colors = [
+                "#1e88e5",
+                "#6ab7ff",
+                "#005cb2",
+                "#1976d2",
+            ];
+
+            const tab = [];
+            for (let i=0; i < props.size; i++) {
+                for (let j=0; j < props.size; j++) {
+                    const n = j + (i * props.size);
+                    tab.push(colors[n%4])
+                }
+            }
+
+            const myStyle = {
+                width: `${props.size * 30}px`,
+                
+            }
+            return (
+                <div style={myStyle}>
+                    {tab.map(e => <Square color={e}/>)}
+                </div>
+            )
+        }
+
+        ReactDOM.render(
+            <App size={4}/>,
+            document.getElementById('root')
+        );
+    </script>
+</body>
+
+</html>
