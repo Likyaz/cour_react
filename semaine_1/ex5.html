@@ -54,7 +54,7 @@
             }
             return (
                 <div style={myStyle}>
-                    {tab.map(e => <Square color={e}/>)}
+                    {tab.map((e, k) => <Square key={k} color={e}/>)}
                 </div>
             )
         }
